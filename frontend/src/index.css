@@ -203,6 +203,11 @@ body {
   border-color: var(--primary);
 }
 
+.styled-select option, .styled-select optgroup {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+}
+
 /* Main Content Area */
 .main-content {
   flex-grow: 1;
