@@ -387,10 +387,11 @@ def cancel_order_execute(order_id: str, account_id: str = None, confirmed: bool 
         }
         
     # Perform update
+    order, _ = check_order_ownership(order_id, account_id)
     updated = data_store.update_order(order_id, {
         "status": "CANCELLED",
         "cancellation_requested_at": SNAPSHOT_TIME.strftime("%Y-%m-%d %H:%M"),
-        "notes": f"Cancelled. Cancellation fee of INR {fee} applied. | " + order.get("notes", "")
+        "notes": f"Cancelled. Cancellation fee of INR {fee} applied. | " + (order.get("notes", "") if order else "")
     })
     
     return {

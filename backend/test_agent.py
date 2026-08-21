@@ -1,8 +1,8 @@
 import os
 import sys
 
-# Add workspace to path
-sys.path.append(r"d:\AI")
+# Add workspace root to path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from backend import data_store
 from backend import tools

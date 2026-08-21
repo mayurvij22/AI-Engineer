@@ -172,7 +172,7 @@ def generate_local_response(message: str, user_context: str, account_id: str = N
             act_id = ticket["account_id"]
             created_str = ticket["created_at"]
             created = tools.parse_date(created_str)
-            elapsed_mins = (SNAPSHOT_TIME - created).total_seconds() / 60.0 if created else 0
+            elapsed_mins = (tools.SNAPSHOT_TIME - created).total_seconds() / 60.0 if created else 0
             
             # Resolve SLA Target
             account = tools.get_account_details(act_id)
