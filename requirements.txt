@@ -1,0 +1,4 @@
+fastapi
+openpyxl
+pypdf
+google-generativeai
